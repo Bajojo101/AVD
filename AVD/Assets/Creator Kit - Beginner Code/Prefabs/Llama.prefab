@@ -419,6 +419,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -600,7 +601,7 @@ Transform:
   m_GameObject: {fileID: 4526789118110734651}
   m_LocalRotation: {x: -0, y: 0.26596728, z: -0, w: -0.96398205}
   m_LocalPosition: {x: 10.136, y: 25.824547, z: -43.727}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 1, z: 1}
   m_Children:
   - {fileID: 118107187305934823}
   - {fileID: 2397403988657139272}
