@@ -423,7 +423,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316931772}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.0720922, y: 0.029372394, z: 0.03933446}
+  m_LocalPosition: {x: 0, y: 0, z: 0.03933446}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1494276921}
@@ -552,7 +552,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 1.4582562
+  orthographic size: 1.2523227
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -576,7 +576,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 323106694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.798, y: -0.182, z: -1}
+  m_LocalPosition: {x: 0.376, y: -0.233, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1012,12 +1012,12 @@ PrefabInstance:
     - target: {fileID: 2504926436887572177, guid: e7211d5170169ee4c967e82026bc2da6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.8939993
+      value: 2.088
       objectReference: {fileID: 0}
     - target: {fileID: 2504926436887572177, guid: e7211d5170169ee4c967e82026bc2da6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.86272466
+      value: 1.355
       objectReference: {fileID: 0}
     - target: {fileID: 2504926436887572177, guid: e7211d5170169ee4c967e82026bc2da6,
         type: 3}
@@ -1728,9 +1728,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.0803283, y: -0.022132829}
+  m_Offset: {x: 0, y: -0.041800827}
   serializedVersion: 2
-  m_Radius: 0.105571076
+  m_Radius: 0.10878649
 --- !u!50 &1494276923
 Rigidbody2D:
   serializedVersion: 4
@@ -1751,7 +1751,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1494276924
 MonoBehaviour:
   m_ObjectHideFlags: 0
