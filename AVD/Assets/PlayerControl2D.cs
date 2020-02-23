@@ -63,4 +63,17 @@ public class PlayerControl2D : MonoBehaviour
         jump = false;
 
     }
+
+    void OnTriggerEnter2D(Collider2D hitInfo)
+    {
+
+        Cherry cherry = hitInfo.GetComponent<Cherry>();
+
+        if (cherry)
+        {
+            cherry.Remove();
+        }
+
+
+    }
 }
