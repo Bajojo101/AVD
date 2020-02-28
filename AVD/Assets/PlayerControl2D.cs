@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 
@@ -14,6 +16,10 @@ public class PlayerControl2D : MonoBehaviour
     bool jump = false;
     bool crouch = false;
     public float Gravity2D = -30f;
+    public Text countTextCherry;
+    public Text countTextGem;
+    private int countCherry;
+    private int countGem;
     private void ChangeGravity(float g)
     {
     }
@@ -21,6 +27,10 @@ public class PlayerControl2D : MonoBehaviour
     private void Start()
     {
         Physics2D.gravity = new Vector2(0, Gravity2D);
+        countGem = 0;
+        countCherry = 0;
+        SetCountGem();
+        SetCountCherry();
     }
 
     void Update()
@@ -68,12 +78,31 @@ public class PlayerControl2D : MonoBehaviour
     {
 
         Cherry cherry = hitInfo.GetComponent<Cherry>();
-
+        Gem gem = hitInfo.GetComponent<Gem>();
+        if (gem)
+        {
+            gem.Remove();
+            countGem = countGem + 1;
+           
+            SetCountGem();
+        }
         if (cherry)
         {
             cherry.Remove();
+            countCherry = countCherry + 1;
+           
+            SetCountCherry();
         }
 
 
+    }
+
+    void SetCountCherry()
+    {
+        countTextCherry.text = "Cherries: " + countCherry.ToString();
+    }
+    void SetCountGem()
+    {
+        countTextGem.text = "Gems: " + countGem.ToString();
     }
 }
