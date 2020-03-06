@@ -4,22 +4,33 @@ using UnityEngine;
 
 public class Bullet3D : MonoBehaviour
 {
-    public float speed = 100f;
-    public float thrust = 1.0f;
-    public Rigidbody rb;
+    public LayerMask layermask;
+    public float speed = 80f;
+    private Rigidbody RB;
     // Start is called before the first frame update
     void Start()
     {
-        rb.GetComponent<Rigidbody>();
-        //rb.AddForce(0, 0, thrust, ForceMode.Impulse);
-        rb.AddForce(transform.position * speed);
-       
+        RB = GetComponent<Rigidbody>();
+        RB.AddForce(transform.forward * speed, ForceMode.Impulse);
+        //Destroy(gameObject, 3f);
+    }
+    public void Die()
+    {
+        Destroy(gameObject);
     }
 
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider info)
     {
-        
+        Debug.Log(info.gameObject.name);
+        if //(info.gameObject.layer == Masks)
+            (layermask == (layermask | (1 << info.gameObject.layer)))
+        {
+            RB.Sleep();//avoid more interactions
+            GetComponent<Animator>().SetTrigger("Die");
+            //it plays the animtaion to make an explotion and die
+
+        }
+
     }
 }
