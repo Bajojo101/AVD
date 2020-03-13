@@ -5,17 +5,42 @@ using UnityEngine;
 public class Weapon3D : MonoBehaviour
 {
     public float frequency = 1f;
+    public float TimeAlive = 3f;
     public GameObject Bullet3d;
     public Transform[] BulletPositions;
     public Animator[] GunsAnimators;
+    public Animator TurretAnimator;
+    private int i = 0;
     void Start()
     {
+       
         StartCoroutine(Fire());
+        StartCoroutine(Disappear());
     }
-    private int i = 0;
+
+    IEnumerator Disappear()
+    {
+        yield return new WaitForSeconds(TimeAlive);
+        TurretAnimator.SetTrigger("Die");
+        yield return null;
+        
+    }
+
+    public void KillTurret()
+    {
+        StopAllCoroutines();
+        TurretAnimator.SetTrigger("Die");
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
+    }
+
+  
     IEnumerator Fire()
     {
-        //GunsAnimators[i].SetTrigger("Fire");
+        GunsAnimators[i].SetTrigger("Fire");
 
         Instantiate(Bullet3d, BulletPositions[i].position, BulletPositions[i].rotation);
         i++;
