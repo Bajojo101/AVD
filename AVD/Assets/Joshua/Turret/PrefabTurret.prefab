@@ -16206,7 +16206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frequency: 0.2
-  TimeAlive: 3
+  TimeAlive: 5
   Bullet3d: {fileID: 2178391688374507805, guid: 2f264309cb8d4d2449ae302a2fe05d36,
     type: 3}
   BulletPositions:

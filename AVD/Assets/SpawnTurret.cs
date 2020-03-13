@@ -10,7 +10,6 @@ public class SpawnTurret : MonoBehaviour
     public GameObject ball;
     public LayerMask layermask;
     public float speed = 10f;
-    public GameObject turretDie;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +28,6 @@ public class SpawnTurret : MonoBehaviour
         if (layermask == (layermask | (1 << collision.gameObject.layer)))
         {
 
-            Destroy(turretDie);
             Instantiate(turret, collision.contacts[0].point, Quaternion.identity, transform.parent);           
             Die();
         }

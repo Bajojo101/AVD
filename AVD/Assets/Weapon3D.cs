@@ -11,6 +11,9 @@ public class Weapon3D : MonoBehaviour
     public Animator[] GunsAnimators;
     public Animator TurretAnimator;
     private int i = 0;
+    private static Weapon3D _instance;
+
+    public static Weapon3D Instance { get { return _instance; } }
     void Start()
     {
        
@@ -52,5 +55,17 @@ public class Weapon3D : MonoBehaviour
     private void OnDisable()
     {
         StopAllCoroutines();
+    }
+
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _instance = this;
+        }
     }
 }
