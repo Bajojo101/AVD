@@ -10,6 +10,7 @@ public class LocomotionSimpleAgent : MonoBehaviour
     Vector2 smoothDeltaPosition = Vector2.zero;
     Vector2 velocity = Vector2.zero;
 
+    public TimeLineControl tc;
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -51,5 +52,10 @@ public class LocomotionSimpleAgent : MonoBehaviour
         transform.position = agent.nextPosition;
 
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //tc.Play();
     }
 }
