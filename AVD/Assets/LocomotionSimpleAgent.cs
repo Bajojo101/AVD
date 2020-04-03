@@ -56,6 +56,11 @@ public class LocomotionSimpleAgent : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //tc.Play();
+        if(other.CompareTag("Disco"))
+        {
+            anim.SetTrigger("dance");
+            //other.GetComponentInParent<Animator>().SetTrigger("action");
+            tc.Play();
+        }
     }
 }
